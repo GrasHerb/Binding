@@ -1,0 +1,24 @@
+﻿<Window x:Class="WpfApp1.Win3"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="Win3" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="10*"/>
+        </Grid.RowDefinitions>
+        <StackPanel>
+            <Label FontSize="40" HorizontalAlignment="Center">sefl source</Label>
+            <Slider x:Name="slid" Margin="5" Minimum="30" Maximum="100" Value="60"/>
+        </StackPanel>
+        <Border Grid.Row="1" BorderBrush="Black" BorderThickness="1" Margin="{Binding Value, ElementName=slid}" Padding="{Binding Margin, RelativeSource={RelativeSource Self}}" >
+            <Rectangle Fill="Gray"/>
+        </Border>
+        <Button Grid.Row="2" Width="150" Margin="5" FontSize="30" Click="Button_Click">Далее</Button>
+    </Grid>
+</Window>
